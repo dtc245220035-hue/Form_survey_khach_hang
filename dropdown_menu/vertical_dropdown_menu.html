@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành - Tạo menu dọc</title>
+    <style>
+        /* Đặt cố định loại font chữ và căn lề cho khung, nội dung danh sách */
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+        }
+
+        ul, li {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Định dạng cho các phần tử trong danh sách (li) */
+        #menu li {
+            list-style: none; /* Bỏ ký hiệu đánh dấu đầu phần tử */
+            position: relative; /* Cho phép danh sách con đặt cạnh phần tử chứa nó */
+            width: 100px; /* Cố định chiều rộng */
+            height: 30px; /* Cố định chiều cao */
+            padding: 0 20px; /* Cố định lề trái và phải */
+            background-color: black; /* Màu nền đen */
+            line-height: 30px; /* Cố định chiều cao dòng văn bản */
+            cursor: pointer; /* Chuyển con trỏ thành hình bàn tay */
+            border-bottom: 1px solid #333; /* Thêm đường viền mỏng để dễ nhìn phân cách các menu */
+        }
+
+        /* Định dạng cho các liên kết bên trong danh sách */
+        #menu a {
+            text-decoration: none; /* Bỏ gạch chân */
+            color: white; /* Đổi màu liên kết sang trắng */
+            display: block; /* Đảm bảo khu vực click bao trọn thẻ li */
+        }
+
+        /* Thay đổi màu nền khi đưa chuột qua phần tử danh sách */
+        #menu li:hover {
+            background-color: #444; /* Đổi màu nền sang xám đậm */
+        }
+
+        /* Định dạng cho danh sách con */
+        #menu li ul {
+            position: absolute; /* Cố định vị trí xuất hiện của danh sách con */
+            top: 0; /* Vị trí góc trên so với phần tử chứa */
+            left: 160px; /* Vị trí góc trái so với phần tử chứa */
+            visibility: hidden; /* Ẩn danh sách con theo mặc định */
+        }
+
+        /* Hiển thị danh sách con khi đưa chuột qua phần tử cha */
+        #menu li:hover > ul {
+            visibility: visible; /* Làm hiện danh sách con */
+        }
+
+        /* Style phụ thêm để demo hiển thị đẹp hơn giữa màn hình */
+        #menu {
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Vùng div chứa menu -->
+    <div id="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li>
+                <a href="#">Sản phẩm ❯</a>
+                <!-- Danh sách con (Menu thả xuống) -->
+                <ul>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Máy tính</a></li>
+                    <li><a href="#">Phụ kiện</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Dịch vụ ❯</a>
+                <!-- Danh sách con (Menu thả xuống) -->
+                <ul>
+                    <li><a href="#">Bảo hành</a></li>
+                    <li><a href="#">Sửa chữa</a></li>
+                    <li><a href="#">Tư vấn</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Giới thiệu</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
